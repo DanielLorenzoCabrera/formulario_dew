@@ -6,40 +6,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="estilos.css">
+    <script src="main.js"></script>
 </head>
 <body>
+    <div class="errors">
+        
+    </div>
     <main>
         <form action="">
             <fieldset>
                 <legend>Datos personales</legend>
                 <div>
-                    <label for="nombre">Nombre</label>
-                    <input type="text" id="nombre">
+                    <label for="nombre">Nombre *</label>
+                    <input type="text" id="nombre" class="data">
                 </div>
                 <div>
-                    <label for="apellidos">Apellidos</label>
-                    <input type="text" id="apellidos">
+                    <label for="apellidos">Apellidos *</label>
+                    <input type="text" id="apellidos" class="data">
                 </div>
                 <div>
-                    <p>Sexo</p>
+                    <p>Sexo *</p>
                     <p class="sexo">
                         <label for="hombre">Hombre</label>
-                        <input type="radio" name="sexo" id="hombre" value="hombre">
+                        <input type="radio" name="sexo" id="hombre" value="hombre" checked class="data">
                         <label for="mujer">Mujer</label>
-                        <input type="radio" name="sexo" id="mujer" value="mujer">
+                        <input type="radio" name="sexo" id="mujer" value="mujer" class="data">
                     </p>
                     
                 </div>
                 <div>
-                    <label for="email">Correo electrónico</label>
-                    <input type="text" name="email" id="email">
+                    <label for="email">Correo electrónico *</label>
+                    <input type="text" name="email" id="email" class="data">
                 </div>
             </fieldset>
             <fieldset>
                 <legend>Información</legend>
                 <div>
                     <label for="motivo">¿Cómo llegó hasta aquí?</label>
-                    <select name="motivo" id="motivo">
+                    <select name="motivo" id="motivo" class="data">
                         <option value="a">Al azar</option>
                         <option value="b">Le indicaron la URL de la página</option>
                         <option value="c">A través de un buscador</option>
@@ -49,16 +53,16 @@
                 <div>
                     <p>¿Desearía información sobre?</p>
                     <p>
-                        <input type="checkbox" name="audiovisual" id="audiovisual">
+                        <input type="checkbox" name="audiovisual" id="audiovisual" class="data">
                         <label for="audiovisual">Material audiovisual</label> 
                     </p>
                     <p>
-                        <input type="checkbox" name="electronico" id="electronico">
+                        <input type="checkbox" name="electronico" id="electronico" class="data">
                         <label for="electronico">Textos electrónicos</label> 
 
                     </p>
                     <p>
-                        <input type="checkbox" name="libros" id="libros">
+                        <input type="checkbox" name="libros" id="libros" class="data">
                         <label for="libros">Libros de texto</label> 
                     </p>
                 </div>
@@ -66,10 +70,11 @@
         </form>
         <section class="controlador">
             <h1>EDITORIAL CICLOS F.P</h1>
-            <select multiple class="perfiles"></select>
-            <input type="button" value="Visualizar datos">
-            <input type="button" value="Añadir">
-            <input type="button" value="Eliminar">
+            <select size="3" class="perfiles">
+            </select>
+            <input type="button" value="Visualizar datos" class="visualize">
+            <input type="button" value="Añadir" class="add">
+            <input type="button" value="Eliminar" class="remove">
         </section>
     </main>
     
