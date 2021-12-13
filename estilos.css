@@ -1,0 +1,53 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+h1{
+    text-align: center;
+}
+
+main{
+    display: flex;
+    flex-flow: row wrap;
+    max-width: 1024px;
+    justify-content: center;
+    margin: 2em 0;
+}
+
+main form, form div {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+form div{
+    padding: 1em;
+}
+
+form div > *{
+    margin: .5em 0;
+}
+
+.controlador{
+    display: flex;
+    flex-flow: column nowrap;
+    margin: 0 .5em;
+}
+
+.controlador input{
+    padding: .5em 0;
+    margin: .5em 0;
+}
+
+.perfiles{
+    width: 300px;
+    height: 20vh;
+}
+
+.sexo {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
