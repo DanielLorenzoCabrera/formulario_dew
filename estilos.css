@@ -16,6 +16,13 @@ main{
     margin: 2em 0;
 }
 
+legend{
+    text-align: center;
+    margin: 0 1em;
+    background-color: rgb(140, 245, 255);
+    padding: .5em 1em;
+}
+
 main form, form div {
     display: flex;
     flex-flow: column nowrap;
@@ -35,7 +42,7 @@ form div > *{
     margin: 0 .5em;
 }
 
-.controlador input{
+.controlador > *{
     padding: .5em 0;
     margin: .5em 0;
 }
