@@ -1,6 +1,12 @@
 document.addEventListener("DOMContentLoaded", obtainInputs);
 
-let people = [];
+const people = [];
+const options = {
+    a : "Al azar",
+    b : "Le indicaron la URL de la página",
+    c : "a través de un buscador",
+    d : "Mediante un enlace desde otra página"
+}
 
 
 function obtainInputs(){
@@ -47,6 +53,10 @@ function checkEmptyFields(){
             errorExists = true;
         }
     })
+    if(!existsGenre()){
+        errors.innerHTML = `${errors.innerHTML} <p>Debes de seleccionar el <span>sexo</span></p>`;
+        errorExists = true;
+    } 
     return errorExists;
 }
 
@@ -65,5 +75,36 @@ function validateEmail(){
 
 function saveData(){
     const data = document.querySelectorAll(".data");
-    data.forEach(element => console.log(element.value))
+    const infoOpt = document.querySelectorAll(".info");
+    let info = []
+    infoOpt.forEach(element => element.checked ? info.push(element.id) : '')
+    people.push({
+        name : data[0].value,
+        surname: data[1].value,
+        email : data[2].value,
+        genre: getGenre(),
+        reason : options[data[3].value],
+        info : info
+    })
+    console.log(people)
+    
+}
+
+function existsGenre(){
+    let genre = getGenre();
+    let existGenre = genre !== "hombre" && genre !== "mujer" ? false : true ;
+    return existGenre;
+        
+}
+
+function getGenre(){
+    const genres = document.querySelectorAll("input[name='sexo']");
+    let genre;
+    genres.forEach(element =>{
+        if(element.checked){
+            genre = element.value;
+        }
+    })
+
+    return genre;
 }
