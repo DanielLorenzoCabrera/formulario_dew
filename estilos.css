@@ -1,3 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400&family=Ubuntu&display=swap');
+
+:root{
+    --main-color : #CCCCFF;
+    --second-color : #fff;
+    --main-font : 'Rubik', sans-serif;
+    --fontWeight-bolder :
+}
+
+body{
+    background-color: var(--main-color);
+}
+
 *{
     box-sizing: border-box;
     margin: 0;
@@ -12,15 +25,27 @@ main{
     display: flex;
     flex-flow: row wrap;
     max-width: 1024px;
-    justify-content: center;
-    margin: 2em 0;
+    justify-content: space-around;
+    align-items: center;
+    margin: 2em auto;
+    
 }
+
+
 
 legend{
     text-align: center;
-    margin: 0 1em;
-    background-color: rgb(140, 245, 255);
+    margin: 0 0 0 auto;
+    outline: .1em dashed var(--second-color);
     padding: .5em 1em;
+    color: var(--second-color);
+}
+
+
+fieldset{
+    margin: .5em 0 ;
+    border: 0;
+    outline: .1em dashed var(--second-color);
 }
 
 main form, form div {
@@ -30,10 +55,11 @@ main form, form div {
 
 form div{
     padding: 1em;
+    
 }
 
 form div > *{
-    margin: .5em 0;
+    margin: .1em 0;
 }
 
 .controlador{
@@ -45,6 +71,13 @@ form div > *{
 .controlador > *{
     padding: .5em 0;
     margin: .5em 0;
+}
+
+.controlador input{
+    background-color: transparent;
+    border: 0;
+    outline: .1em solid ;
+
 }
 
 .perfiles{
@@ -61,3 +94,12 @@ form div > *{
     justify-content: space-between;
 }
 
+
+.errors{
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.errors > * {
+    margin:  .1em 0;
+}
