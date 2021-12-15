@@ -50,7 +50,7 @@ function visualizeData(){
         Sexo: ${selected.genre}
         Motivo: ${selected.reason}
         Desea información sobre: ${selected.info}`)
-    : alert("nada seleccionado");
+    : alert("Nada seleccionado");
 }
 
 
@@ -67,7 +67,7 @@ function addPerson(){
 
 function removePerson(){
     let selected = existSelection();
-    selected ? localStorage.removeItem(selected.name): alert("nada seleccionado");
+    selected ? localStorage.removeItem(selected.name): alert("Nada seleccionado");
     updateList();
 }
 
@@ -106,7 +106,7 @@ function saveData(){
     const data = document.querySelectorAll(".data");
     const infoOpt = document.querySelectorAll(".info");
     let info = []
-    infoOpt.forEach(element => element.checked ? info.push(element.id) : '')
+    infoOpt.forEach(element => element.checked ? info.push(element.name) : '')
     window.localStorage.setItem(`${data[0].value}`, JSON.stringify({
         name : data[0].value,
         surname: data[1].value,
@@ -147,7 +147,3 @@ function updateList(){
         }
 }
 
-
-function changeSelection(){
-    console.log(this)
-}

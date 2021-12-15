@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First Form</title>
+    <link rel="stylesheet" href="estilos.css">
+    <script src="first_form.js"></script>
+</head>
+<body>
+    <div class="errors">
+        
+    </div>
+    <main>
+        <form action="">
+            <fieldset>
+                <legend>Datos personales</legend>
+                <div>
+                    <label for="nombre">Nombre *</label>
+                    <input type="text" id="nombre" class="data">
+                </div>
+                <div>
+                    <label for="apellidos">Apellidos *</label>
+                    <input type="text" id="apellidos" class="data">
+                </div>
+                <div>
+                    <p>Sexo *</p>
+                    <p class="sexo">
+                        <label for="hombre">Hombre</label>
+                        <input type="radio" name="sexo" id="hombre" value="hombre" >
+                        <label for="mujer">Mujer</label>
+                        <input type="radio" name="sexo" id="mujer" value="mujer" >
+                    </p>
+                    
+                </div>
+                <div>
+                    <label for="email">Correo electrónico *</label>
+                    <input type="text" name="email" id="email" class="data">
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Información</legend>
+                <div>
+                    <label for="motivo">¿Cómo llegó hasta aquí?</label>
+                    <select name="motivo" id="motivo" class="data">
+                        <option value="a">Al azar</option>
+                        <option value="b">Le indicaron la URL de la página</option>
+                        <option value="c">A través de un buscador</option>
+                        <option value="d">Mediante un enlace desde otra página</option>
+                    </select>
+                </div>
+                <div>
+                    <p>¿Desearía información sobre?</p>
+                    <p>
+                        <input type="checkbox" name="audiovisual" id="audiovisual" class="info">
+                        <label for="audiovisual">Material audiovisual</label> 
+                    </p>
+                    <p>
+                        <input type="checkbox" name="electronico" id="electronico" class="info">
+                        <label for="electronico">Textos electrónicos</label> 
+
+                    </p>
+                    <p>
+                        <input type="checkbox" name="libros" id="libros" class="info">
+                        <label for="libros">Libros de texto</label> 
+                    </p>
+                </div>
+            </fieldset>
+        </form>
+        <section class="controlador">
+            <h1>EDITORIAL CICLOS F.P</h1>
+            <select size="3" class="perfiles">
+                
+            </select>
+            <input type="button" value="Visualizar datos" class="visualize">
+            <input type="button" value="Añadir" class="add">
+            <input type="button" value="Eliminar" class="remove">
+        </section>
+    </main>
+    
+</body>
+</html>
