@@ -7,7 +7,7 @@
 }
 
 body{
-    background-color: var(--main-color);
+    background-color: var(--second-color);
 }
 
 *{
@@ -33,23 +33,27 @@ main{
     
 }
 
-
+form{
+    background-color: var(--second-color);
+    padding: 1em;
+}
 
 legend{
     text-align: center;
     margin: 0 0 0 auto;
     padding: .5em 1em;
-    color: #000;
-    background-color: var(--second-color);
-    outline: .2em solid #000;
+    color: var(--second-color);
+    outline: .2em solid var(--main-color);
     border-radius: .1em;
+    background-color: var(--main-color);
 }
 
 
 fieldset{
     margin: .5em 0 ;
     border: 0;
-    background-color: var(--second-color);
+    border-radius: .1em;
+    outline: .2em solid var(--main-color);
 }
 
 main form, form div {
@@ -77,7 +81,10 @@ form input, form select{
     display: flex;
     flex-flow: column nowrap;
     margin: 0 .5em;
+    
 }
+
+
 
 .controlador > *{
     padding: .5em 0;
@@ -87,19 +94,23 @@ form input, form select{
 .controlador input{
     background-color: transparent;
     border: 0;
-    outline: .1em solid ;
+    outline: .1em solid var(--main-color);
 
 }
 
 .controlador input:hover{
-    background-color: var(--second-color);
+    background-color: var(--main-color);
     cursor: pointer;
+    color: var(--second-color);
 }
 
 .perfiles{
     min-width: 300px;
     min-height: 30vh;
     padding: 1em;
+    border: 0;
+    outline: .2em solid var(--main-color);
+    border-radius: .1em;
 }
 
 
@@ -114,8 +125,15 @@ form input, form select{
 .errors{
     display: flex;
     flex-flow: column nowrap;
+    padding: 1em;
+    
 }
 
 .errors > * {
     margin:  .1em 0;
+    
+}
+
+.errors p::before{
+    content: " * ";
 }
