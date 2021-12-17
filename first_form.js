@@ -105,7 +105,7 @@ function validateEmail(){
 function saveData(){
     const data = document.querySelectorAll(".data");
     const infoOpt = document.querySelectorAll(".info");
-    let info = []
+    let info = [];
     infoOpt.forEach(element => element.checked ? info.push(element.name) : '')
     window.localStorage.setItem(`${data[0].value}`, JSON.stringify({
         name : data[0].value,

@@ -1,0 +1,36 @@
+@import url('first-styles.css');
+
+
+h1{
+    margin: 2em 0;
+}
+
+form{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    margin: 1em auto;
+}
+
+form fieldset{
+    max-width: 760px;
+    display: flex;
+    flex-flow: row wrap;
+    outline: 0;
+    justify-content: space-around;
+}
+
+form fieldset > * {
+    margin: 1em .1em;
+}
+
+fieldset input, form select{
+    width: 150px;
+    
+}
+
+body > input{
+    background-color: transparent;
+    border: 0;
+    outline: .1em solid var(--main-color);
+}

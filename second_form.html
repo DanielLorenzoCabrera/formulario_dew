@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Second form</title>
+    <link rel="stylesheet" href="second-styles.css">
 </head>
 <body>
     <h1>Validaciones de un formulario</h1>
@@ -34,8 +35,6 @@
                 <p>Nº expediente</p>
                 <input type="text" name="register" id="register">
             </section>
-        </fieldset>
-        <fieldset>
             <section>
                 <p>Fecha de permiso</p>
                 <input type="date" name="permission" id="permission">
@@ -51,7 +50,7 @@
             <section>
                 <p>Tipo de tarjeta</p>
                 <select name="cardType" id="cardType">
-                    <option value="generic">Generic</option>
+                    <option value="generic">Genérica</option>
                     <option value="american">American Express</option>
                     <option value="diner">Diner's Club</option>
                     <option value="master">Master Card</option>
@@ -60,11 +59,15 @@
             </section>
             <section>
                 <p>Mes de expiación</p>
+                <input type="number" name="month-expiration" id="month-expiration">
             </section>
             <section>
                 <p>Año de expiación</p>
+                <input type="number" name="year-expiration" id="year-expiration">
             </section>
         </fieldset>
     </form>
+    <input type="button" value="Validar">
+
 </body>
 </html>

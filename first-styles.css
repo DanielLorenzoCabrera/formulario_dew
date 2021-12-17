@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400&family=Ubuntu&display=swap');
+
+:root{
+    --main-color : #CCCCFF;
+    --second-color : #fff;
+    --main-font : 'Rubik', sans-serif;
+}
+
+body{
+    background-color: var(--second-color);
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: var(--main-font);
+}
+
+h1{
+    text-align: center;
+    font-family: var(--main-font);
+    font-weight: var(--fontWeight-bold);
+}
+
+main{
+    display: flex;
+    flex-flow: row wrap;
+    max-width: 1024px;
+    justify-content: space-around;
+    align-items: center;
+    margin: 2em auto;
+    
+}
+
+form{
+    background-color: var(--second-color);
+    padding: 1em;
+}
+
+legend{
+    text-align: center;
+    margin: 0 0 0 auto;
+    padding: .5em 1em;
+    color: var(--second-color);
+    outline: .2em solid var(--main-color);
+    border-radius: .1em;
+    background-color: var(--main-color);
+}
+
+
+fieldset{
+    margin: .5em 0 ;
+    border: 0;
+    border-radius: .1em;
+    outline: .2em solid var(--main-color);
+}
+
+main form, form div {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+form div{
+    padding: 1em;
+    
+}
+
+
+form div > *{
+    margin: .1em 0;
+}
+
+form input, form select{
+    padding: .4em 0;
+}
+
+
+
+.controlador{
+    display: flex;
+    flex-flow: column nowrap;
+    margin: 0 .5em;
+    
+}
+
+
+
+.controlador > *{
+    padding: .5em 0;
+    margin: .5em 0;
+}
+
+.controlador input{
+    background-color: transparent;
+    border: 0;
+    outline: .1em solid var(--main-color);
+
+}
+
+.controlador input:hover{
+    background-color: var(--main-color);
+    cursor: pointer;
+    color: var(--second-color);
+}
+
+.perfiles{
+    min-width: 300px;
+    min-height: 30vh;
+    padding: 1em;
+    border: 0;
+    outline: .2em solid var(--main-color);
+    border-radius: .1em;
+}
+
+
+.sexo {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
+
+.errors{
+    display: flex;
+    flex-flow: column nowrap;
+    padding: 1em;
+    
+}
+
+.errors > * {
+    margin:  .1em 0;
+    
+}
+
+.errors p::before{
+    content: " * ";
+}
+
+
+span{
+    font-weight: bolder;
+    color: var(--main-color);
+}
