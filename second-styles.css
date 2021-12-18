@@ -34,3 +34,18 @@ body > input{
     border: 0;
     outline: .1em solid var(--main-color);
 }
+
+.validacion{
+    width: 100%;
+}
+
+input[value="Validar"]{
+    background-color: transparent;
+    padding: .3em 1em;
+    margin: 1em auto;
+    cursor: pointer;
+    border: 0;
+    outline: .2em solid var(--main-color);
+
+}
+
