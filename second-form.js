@@ -25,7 +25,7 @@ function checkData(){
 function checkEmptyFields(){
     const emptyFields = [];
     const inputs = document.querySelectorAll(".input");
-    inputs.forEach(input =>{
+    inputs.forEach(input => {
         input.value === "" ? emptyFields.push(`<p>El campo <span>${input.dataset.name}</span> está vacío.</p>`) : '';
     })
 
@@ -52,8 +52,16 @@ function checkWrongFields(){
                 checkAge(data) ? '' : wrongFields.push(errorMessage(input.dataset.name));
                 break;
             case "matricula":
-                checkRegister(data);
-            
+                checkRegister(data) ? '' : wrongFields.push(errorMessage(input.dataset.name));
+                break;
+            case "N-expediente":
+                checkRange(data, 340000000000, 349999999999) ? '' : wrongFields.push(errorMessage(input.dataset.name));
+                break;
+            case "fecha-permiso":
+                checkDate(data) ? '' : wrongFields.push(errorMessage(input.dataset.name));
+                break;
+            case "importe":
+                checkImport(data) ? '' : wrongFields.push(errorMessage(input.dataset.name));
         }
 
 
@@ -62,12 +70,7 @@ function checkWrongFields(){
 }
 
 
-
-function validateString(data,minLength, maxLength){
-    if(data.length < minLength || data.length > maxLength || containNumbers(data)) return false;
-    return true;
-}
-
+const validateString = (data, minLength, maxLength) => (data.length < minLength || data.length  > maxLength || containNumbers(data)) ? false : true;
 
 
 function containNumbers(string){
@@ -92,7 +95,33 @@ function checkAge(age){
 
 function checkRegister(data){
     const regExp = /^\d{4}[BCDFGHJKLMNPQRSTVWXYZ][BCDFGHJKLMNPQRSTVWXYZ][BCDFGHJKLMNPORSTVWXYZ]$/;
-    const amigo = data.search(regExp)
-    console.log(amigo)
-
+    return data.search(regExp) === 0 ? true : false;
 }
+
+
+const checkRange = (data, min, max) => data < min || data > max || containNaN(data) ? false : true;
+
+
+function containNaN(data){
+    for(let i = 0; i < data.length ; i++){
+        if(isNaN(parseInt(data[i]))){
+            return true;
+        }
+    }
+    return false;
+}
+
+function checkDate(date){
+    const [year, month, day] = date.split("-");
+    return (
+        isEmpty(year) || isEmpty(month) || isEmpty(day) || // check empty
+        year < 0 || month < 0 || month > 12 || day < 0 || day > 31  // check range
+        || containNaN(year) || containNaN(month) || containNaN(day) // check nan elements
+        ? false : true);
+    
+}
+
+
+const isEmpty = element => element === "" ? true : false;
+
+const checkImport = cost => ( isNaN(cost) || cost < 0 ) ? false : true ;
