@@ -49,22 +49,12 @@
                 <input type="text" name="cardNumber" id="cardNumber" class="input" data-name="N-tarjeta">
             </section>
             <section>
-                <p>Tipo de tarjeta</p>
-                <select name="cardType" id="cardType" class="input" data-name="tipo-tarjeta">
-                    <option value="generic">Genérica</option>
-                    <option value="american">American Express</option>
-                    <option value="diner">Diner's Club</option>
-                    <option value="master">Master Card</option>
-                    <option value="visa">Visa</option>
-                </select>
-            </section>
-            <section>
                 <p>Mes de expiación</p>
-                <input type="number" name="month-expiration" id="month-expiration" class="input" data-name="mes-exp">
+                <input type="number" name="month-expiration" id="month-expiration" class="input" data-name="month-exp" min="1" max="12">
             </section>
             <section>
                 <p>Año de expiación</p>
-                <input type="number" name="year-expiration" id="year-expiration" class="input" data-name="año-exp">
+                <input type="number" name="year-expiration" id="year-expiration" class="input" data-name="year-exp" min="2001" max="2100">
             </section>
         </fieldset>
         <div class="validacion">

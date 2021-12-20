@@ -3,6 +3,7 @@
 
 h1{
     margin: 2em 0;
+    color: var(--main-color);
 }
 
 form{
@@ -18,6 +19,7 @@ form fieldset{
     flex-flow: row wrap;
     outline: 0;
     justify-content: space-around;
+    outline: .1em solid var(--main-color);
 }
 
 form fieldset > * {
@@ -49,3 +51,12 @@ input[value="Validar"]{
 
 }
 
+input[value="Validar"]:hover{
+    background-color: var(--main-color);
+    color: var(--second-color);
+}
+
+.errors{
+    display: flex;
+    align-items: center;
+}
